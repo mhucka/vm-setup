@@ -17,6 +17,7 @@ echo -e "\033[33;32mInstalling initial software ...\033[0m"
 echo -e "\033[33;32m———————————————————————————————————————————————————\033[0m"
 
 pkgs=(alien \
+      apt-file \
       bat \
       boxes \
       build-essential \
@@ -105,6 +106,8 @@ sudo systemctl disable cups cups-browsed
 sudo addgroup www-data
 sudo adduser $USERNAME www-data
 
+mkdir -p ~/.config/gtk-3.0
+
 # Make scrollbars wider.
 cat >> ~/.config/gtk-3.0/gtk.css <<EOF
 scrollbar slider {
@@ -119,7 +122,6 @@ scrollbar slider {
 EOF
 
 # Make clicking in the scrollbar cause scrolling by single pages.
-mkdir -p ~/.config/gtk-3.0
 cat >> ~/.config/gtk-3.0/settings.ini <<EOF
 [Settings]
 gtk-primary-button-warps-slider = false
