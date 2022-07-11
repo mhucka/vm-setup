@@ -28,6 +28,7 @@ pkgs=(alien \
       ghostscript \
       git \
       git-lfs \
+      gnupg \
       htop \
       imagemagick \
       jq \
@@ -81,10 +82,10 @@ echo -e "\033[33;32m————————————————————
 echo -e "\033[33;32mGenerating SSH identity for GitHub ...\033[0m"
 echo -e "\033[33;32m———————————————————————————————————————————————————\033[0m"
 
-gh auth login --git-protocol ssh --with-token
+gh auth login --git-protocol ssh
 
 echo -e "\033[33;32m———————————————————————————————————————————————————\033[0m"
-echo -e "\033[33;32mAnswer 'yes' to the next question ...\033[0m"
+echo -e "\033[33;32mAnswer 'yes' explicitly to the next question ...\033[0m"
 echo -e "\033[33;32m———————————————————————————————————————————————————\033[0m"
 
 /bin/rm -rf ~/system
